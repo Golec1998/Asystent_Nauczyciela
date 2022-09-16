@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/student_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/studentListFragment"
+        android:name="com.example.asystent_nauczyciela.fragments.list.StudentListFragment"
+        android:label="Lista studentów"
+        tools:layout="@layout/fragment_student_list" >
+        <action
+            android:id="@+id/action_studentListFragment_to_studentAddFragment"
+            app:destination="@id/studentAddFragment" />
+        <action
+            android:id="@+id/action_studentListFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_studentListFragment_to_studentSubjectListFragment"
+            app:destination="@id/studentSubjectListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentAddFragment"
+        android:name="com.example.asystent_nauczyciela.fragments.add.StudentAddFragment"
+        android:label="Dodaj studenta"
+        tools:layout="@layout/fragment_student_add" >
+        <action
+            android:id="@+id/action_studentAddFragment_to_studentListFragment"
+            app:destination="@id/studentListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.asystent_nauczyciela.fragments.HomeFragment"
+        android:label="Asystent nauczyciela"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_studentListFragment"
+            app:destination="@id/studentListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_subjectListFragment"
+            app:destination="@id/subjectListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentUpdateFragment"
+        android:name="com.example.asystent_nauczyciela.fragments.update.StudentUpdateFragment"
+        android:label="Edytuj studenta"
+        tools:layout="@layout/fragment_student_update" >
+        <argument
+            android:name="currentStudent"
+            app:argType="com.example.asystent_nauczyciela.data.entities.Student" />
+        <action
+            android:id="@+id/action_studentUpdateFragment_to_studentSubjectListFragment"
+            app:destination="@id/studentSubjectListFragment" />
+        <action
+            android:id="@+id/action_studentUpdateFragment_to_studentListFragment"
+            app:destination="@id/studentListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subjectListFragment"
+        android:name="com.example.asystent_nauczyciela.fragments.list.SubjectListFragment"
+        android:label="Lista przedmiotów"
+        tools:layout="@layout/fragment_subject_list" >
+        <action
+            android:id="@+id/action_subjectListFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_subjectListFragment_to_subjectAddFragment"
+            app:destination="@id/subjectAddFragment" />
+        <action
+            android:id="@+id/action_subjectListFragment_to_subjectUpdateFragment"
+            app:destination="@id/subjectUpdateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subjectAddFragment"
+        android:name="com.example.asystent_nauczyciela.fragments.add.SubjectAddFragment"
+        android:label="Dodaj przedmiot"
+        tools:layout="@layout/fragment_subject_add" >
+        <action
+            android:id="@+id/action_subjectAddFragment_to_subjectListFragment"
+            app:destination="@id/subjectListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subjectUpdateFragment"
+        android:name="com.example.asystent_nauczyciela.fragments.update.SubjectUpdateFragment"
+        android:label="Edytuj przedmiot"
+        tools:layout="@layout/fragment_subject_update" >
+        <action
+            android:id="@+id/action_subjectUpdateFragment_to_subjectListFragment"
+            app:destination="@id/subjectListFragment" />
+        <argument
+            android:name="currentSubject"
+            app:argType="com.example.asystent_nauczyciela.data.entities.Subject" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentSubjectListFragment"
+        android:name="com.example.asystent_nauczyciela.fragments.list.StudentSubjectListFragment"
+        android:label="Student"
+        tools:layout="@layout/fragment_student_subject_list" >
+        <action
+            android:id="@+id/action_studentSubjectListFragment_to_studentUpdateFragment"
+            app:destination="@id/studentUpdateFragment" />
+        <action
+            android:id="@+id/action_studentSubjectListFragment_to_studentListFragment"
+            app:destination="@id/studentListFragment" />
+        <argument
+            android:name="currentStudent"
+            app:argType="com.example.asystent_nauczyciela.data.entities.Student" />
+    </fragment>
+</navigation>

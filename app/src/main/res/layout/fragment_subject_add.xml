@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.add.SubjectAddFragment"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/addSubjectName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:hint="Nazwa przedmiotu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subjectDayLabel"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="Dzień"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addSubjectName" />
+
+    <TextView
+        android:id="@+id/subjectHourLabel"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Godzina"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/subjectDurationLabel"
+        app:layout_constraintStart_toEndOf="@+id/subjectDayLabel"
+        app:layout_constraintTop_toBottomOf="@+id/addSubjectName" />
+
+    <TextView
+        android:id="@+id/subjectDurationLabel"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="Czas"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addSubjectName" />
+
+    <Spinner
+        android:id="@+id/subjectDaySpinner"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/days"
+        android:textAlignment="center"
+        android:layout_margin="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/subjectDayLabel"
+        app:layout_constraintStart_toStartOf="@+id/subjectDayLabel"
+        app:layout_constraintTop_toBottomOf="@+id/subjectDayLabel"
+        android:background="@null"/>
+
+    <Spinner
+        android:id="@+id/subjectHourSpinner"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/hours"
+        android:textAlignment="center"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/subjectDaySpinner"
+        app:layout_constraintStart_toStartOf="@+id/subjectHourLabel"
+        app:layout_constraintTop_toTopOf="@+id/subjectDaySpinner"
+        android:background="@null"/>
+
+    <Spinner
+        android:id="@+id/subjectMinuteSpinner"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/minutes"
+        android:textAlignment="center"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/subjectHourSpinner"
+        app:layout_constraintStart_toEndOf="@+id/subjectHourSpinner"
+        app:layout_constraintTop_toTopOf="@+id/subjectHourSpinner"
+        android:background="@null"/>
+
+    <Spinner
+        android:id="@+id/subjectDurationSpinner"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/durations"
+        android:textAlignment="center"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/subjectMinuteSpinner"
+        app:layout_constraintEnd_toEndOf="@+id/subjectDurationLabel"
+        app:layout_constraintStart_toStartOf="@+id/subjectDurationLabel"
+        app:layout_constraintTop_toTopOf="@+id/subjectMinuteSpinner"
+        android:background="@null"/>
+
+    <Button
+        android:id="@+id/addSubjectButton"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:text="Dodaj"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subjectDaySpinner" />
+</androidx.constraintlayout.widget.ConstraintLayout>
